@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        body {
+            background-color: #9a9a9a;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Prac 1</h1>
+    <div id="app">
+        <form>
+            <p>Email:</p>
+            <input
+                type="text"
+                v-model="email"
+                placeholder="Your email.."
+            >
+            <p>Password:</p>
+            <input
+                type="password"
+                v-model="password"
+                placeholder="Your password.."
+            ><br>
+            <p>{{ email }}</p><br>
+            <p>{{ password }}</p>
+        </form>
+        <div>Checked names: {{ checkedNames }}</div>
+
+            <input type="checkbox" id="hoan" value="hoan" v-model="checkedNames">
+            <label for="hoan">hoan</label>
+
+            <input type="checkbox" id="huy" value="huy" v-model="checkedNames">
+            <label for="huy">huy</label>
+
+            <input type="checkbox" id="nguyen" value="nguyen" v-model="checkedNames">
+            <label for="ngưyen">nguyen</label><br>
+
+        <select v-model="selected">
+            <option v-for ="option in options" :value="option.value">
+                {{ option.text }}
+            </option>
+        </select>
+        <p>Selected: {{ selected }}</p>
+    </div>
+
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            email: 'shrice',
+            password: '123456',
+            checkedNames: [],
+            selected: '',
+            options: [
+                { text: 'Hoan', value: '完' },
+                { text: 'Huy', value: '輝' },
+                { text: 'Nguyen', value: '阮' }
+            ],
+        },
+    });
+</script>
