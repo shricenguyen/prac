@@ -8,17 +8,51 @@
     
     <style>
         body {
-            background-color: #9a9a9a;
+            background-color: #f8f4f4;
         }
     </style>
 </head>
 <body>
     <div id = "app">
-        {{ message }}
-    </div>
+        <p>{{ message }}</p>
+        <p v-for="assignment in assignments" :key="assignment.id">
+            {{ assignment.name }}</p>
+        <p v-if="assignments[0].dueTomorrow">{{ assignments[0].name }} is due tomorrow</p>
+        <p v-if="assignments[1].dueTomorrow">{{ assignments[1].name }} is due tomorrow</p>
+        <p v-if="assignments[2].dueTomorrow">{{ assignments[2].name }} is due tomorrow</p>
+        <p v-show="assignments[0].dueTomorrow">{{ assignments[0].name }} is due tomorrow</p>
+        <p v-show="assignments[1].dueTomorrow">{{ assignments[1].name }} is due tomorrow</p>
+        <p v-show="assignments[2].dueTomorrow">{{ assignments[2].name }} is due tomorrow</p>
 
+    </div>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
-<script src="./main.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello World',
+            schlaf: true,
+            assignments: [
+            {
+                name: 'Assignment 1',
+                dueTomorrow: true,
+                id: 1
+            },
+            {
+                name: 'Assignment 2',
+                dueTomorrow: false,
+                id: 2
+            },
+            {
+                name: 'Assignment 3',
+                dueTomorrow: true,
+                id: 3
+            },
+
+            ]
+        }
+    })
+</script>
 </html>
