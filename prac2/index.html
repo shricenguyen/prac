@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practical</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prac2.css">
+    
+    <style>
+        body {
+            background-color: #9a9a9a;
+        }
+    </style>
+</head>
+
+<body style="background-color:#9a9a9a">
+    <h1>Prac 1</h1>
+    <form>
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname" placeholder="Your name.."><br>
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname" placeholder="Your last name.."><br>
+        <input type="submit" value="Submit">
+    </form>
+    <img src="mai_nom.jpeg" alt="han_nom" width="200px" height="200px">
+    <table>
+        <tr>
+            <th>Chu Nom</th>
+            <th>Meaning</th>
+        </tr>
+        <tr>
+            <td>完</td>
+            <td>Hoan or perfect</td>
+        </tr>
+        <tr>
+            <td>輝</td>
+            <td>Huy or brighten</td>
+        </tr>
+        <tr>
+            <td>阮</td>
+            <td>Nguyen</td>
+        </tr>
+    </table>
+
+    <h2>Kim Chi Nam</h2>
+
+    <ul>
+    <li>In ryhmes</li>
+    <li>Multi</li>
+    <li>Meta</li>
+    </ul>  
+
+    <button onclick="myFunction()">Show Date</button>
+    <p id="date"></p>
+
+    <div id="app">
+            <div v-for="todo in todos" :key="todo.text" :style="{textDecoration: todo.checked? 'line-through':'none'}">
+                <input type="checkbox" v-model="todo.checked">
+                {{ todo.text }}
+            </div>
+
+    </div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+<script src="./main.js"></script>
+</html>
