@@ -14,9 +14,20 @@
 </head>
 
 <body>
-    <div id="components-demo">
-        <button-counter></button-counter>
+    <div id="app">
+        <component1></component1>
+        <component2></component2>
+        {{ message }}
       </div>
+
+      <div id="app">
+        <kimChiNam
+        v-for ="lyric in lyrics"
+        v-bind:key="lyric.id"
+        v-bind:title="lyric.line">
+        </kimChiNam>
+        {{line}}
+    </div>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
